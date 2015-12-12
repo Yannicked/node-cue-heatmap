@@ -3793,6 +3793,17 @@ function main() {
 	return keyhook.create(keyhook_up, keyhook_down);
 }
 
+function create() {
+	c = new cue.CueSDK();
+	c.clear();
+	return keyhook.create(keyhook_up, keyhook_down);
+}
+
+function destroy() {
+	keyhook.destroy();
+	c.close();
+}
+
 function keyhook_up(keycode) {
 	var corsairKeycode = keymap[keycode];
 	if (down.indexOf(corsairKeycode) > -1) {
@@ -3843,7 +3854,7 @@ function updateLeds() {
 if(require.main === module) 
    { main(); }
 else
-   { module.exports = {main: main}; }
+   { module.exports = {create: create, destroy: destroy} }
 
 
 
