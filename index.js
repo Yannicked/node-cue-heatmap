@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var keyhook = require('node-win32-keyhook')
 var path = require('path');
 var traceur = require('traceur');
@@ -3839,4 +3840,10 @@ function updateLeds() {
 	c.set(rgbobj, true);
 }
 
-main();
+if(require.main === module) 
+   { main(); }
+else
+   { module.exports = {main: main}; }
+
+
+
