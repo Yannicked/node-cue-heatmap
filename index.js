@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 var keyhook = require('node-win32-keyhook')
 var path = require('path');
-var traceur = require('traceur');
-var cue = traceur.require('cue-sdk-node');
+var cue = require('cue-sdk-node');
 
 var keymap = {
 	0x1B: 1,
@@ -3765,6 +3764,7 @@ var hue = [ // Nom nom nom, memory is delicious! (precalculated hue table for sp
     [255, 0, 1],
     [255, 0, 0]
 ];
+
 var lowcolor = 240;
 var highcolor = 0;
 
@@ -3785,7 +3785,7 @@ function main() {
 	stdin.setEncoding( 'utf8' );
 	stdin.on( 'data', function( key ){
 	  if ( key === '\u001B' ) {
-		keyhook.destroy();
+		destroy();
 		process.exit();
 	  }
 	});

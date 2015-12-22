@@ -10,8 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "cue-sdk-node": "^1.0.4",
-    "node-win32-keyhook": "^1.0.1",
-    "traceur": "0.0.93"
+    "node-win32-keyhook": "^1.0.1"
   }, 
   "bin": {"cue-heatmap": "./index.js"}
 }
